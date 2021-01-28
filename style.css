@@ -1,0 +1,129 @@
+:root {
+    --hover-width: 75%;
+    --other-width: 25%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+h1 {
+    font-size: 50px;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #fff;
+    border: 3px solid #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 15rem;
+    padding: 24px;
+}
+
+.split.left .btn:hover {
+    background-color: rgba(43, 43, 43, 1);
+    border-color: rgba(43, 43, 43, 1);
+}
+
+.split.right .btn:hover {
+    background-color: rgba(87, 84, 236, 1);
+    border-color: rgba(87, 84, 236, 1);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.left {
+    left: 0;
+    background-image: url(/img/nike-jordans.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.left::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 43, 43, 0.8)
+}
+
+.split.right {
+    right: 0;
+    background-image: url(/img/jordan-one-take-ii-basketball-shoe-rHXwwQ.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.right::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(87, 84, 236, 0.7);
+}
+
+.split.right, .split.left, .split.right::before, .split.left::before {
+    transition: all ease-in-out 1000ms;
+}
+
+.hover-left .left {
+    width: var(--hover-width);
+}
+
+.hover-left .right {
+    width: var(--other-width);
+}
+
+.hover-right .right {
+    width: var(--hover-width);
+}
+
+.hover-right .left {
+    width: var(--other-width);
+}
+
+@media(max-width: 800px) {
+    h1 {
+        font-size: 32px;
+        top: 30%;
+    }
+
+    .btn {
+        padding: 19px;
+        width: 12rem;
+    }
+}
